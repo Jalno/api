@@ -1,0 +1,23 @@
+{
+    "name": "jalno/api",
+    "autoload": {
+        "psr-4": {
+            "Jalno\\API\\": "src"
+        }
+    },
+    "require": {
+        "jalno/userpanel": "dev-master"
+    },
+    "extra": {
+        "jalno": {
+            "package": "Jalno\\API\\Package"
+        }
+    },
+    "minimum-stability": "dev",
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/home/composer/userpanel"
+        }
+    ]
+}
