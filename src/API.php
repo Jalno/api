@@ -125,7 +125,8 @@ abstract class API
                 }
             } elseif (Str::contains($key, ":")) {
                 $relation = Str::before($key, ":");
-                if (!isset($model->$relation) and $model->relationLoaded($relation)) {
+                $model->$relation; // Try to load realtion
+                if ($model->relationLoaded($relation)) {
                     $this->validateSearchKeys($model->$relation()->getQuery()->getModel(), [Str::after($key, ":") => $item]);
                 } elseif (!in_array($key, $attributes)) {
                     throw ValidationException::withMessages([$key => "The {$key} search key is not allowed."]);
